@@ -29,13 +29,21 @@ if val in tree [ root ]: return predict ( tree [ root ][ val ] , input_data )
 return " Unknown "
 st . title ("ID3 Decision Tree Classifier ")
 data_dict = {
-" outlook ": [’sunny ’, ’sunny ’, ’overcast ’, ’rain ’, ’rain ’, ’overcast ’, ’
-sunny ’, ’sunny ’, ’overcast ’, ’rain ’, ’overcast ’, ’overcast ’, ’rain ’, ’
-sunny ’] ,
-" humidity ": [’high ’, ’normal ’, ’high ’, ’normal ’, ’high ’, ’high ’, ’normal ’
-, ’normal ’, ’normal ’, ’normal ’, ’normal ’, ’high ’, ’high ’, ’normal ’] ,
-" playtennis ": [’no ’, ’yes ’, ’yes ’, ’yes ’, ’no ’, ’yes ’, ’yes ’, ’yes ’, ’no ’
-, ’yes ’, ’no ’, ’yes ’, ’yes ’, ’yes ’]
+    "outlook": [
+        'sunny', 'sunny', 'overcast', 'rain', 'rain', 'overcast',
+        'sunny', 'sunny', 'overcast', 'rain', 'overcast', 'overcast',
+        'rain', 'sunny'
+    ],
+    "humidity": [
+        'high', 'normal', 'high', 'normal', 'high', 'high',
+        'normal', 'normal', 'normal', 'normal', 'normal', 'high',
+        'high', 'normal'
+    ],
+    "playtennis": [
+        'no', 'yes', 'yes', 'yes', 'no', 'yes',
+        'yes', 'yes', 'no', 'yes', 'no', 'yes',
+        'yes', 'yes'
+    ]
 }
 df = pd . DataFrame ( data_dict )
 uploaded_file = st . file_uploader (" Upload CSV", type ="csv")
