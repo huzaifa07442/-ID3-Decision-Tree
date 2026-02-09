@@ -51,9 +51,10 @@ if uploaded_file : df = pd . read_csv ( uploaded_file )
 target_col = st . selectbox (" Target Column ", df . columns , index =len( df . columns )
 -1)
 features = [ c for c in df . columns if c != target_col ]
-if st . button (" Train ") :
-tree = id3 ( df , target_col , features )
-st . session_state [’tree ’] = tree
-st . json ( tree )
-if ’tree ’ in st . session_state :
-inputs = { col : st . selectbox ( col , df [ col ]. unique () ) for col in features }
+if st.button("Train"):
+    tree = id3(df, target_col, features)
+    st.session_state['tree'] = tree
+    st.json(tree)
+
+if 'tree' in st.session_state:
+    inputs = {col: st.selectbox(col, df[col].unique()) for col in features}
